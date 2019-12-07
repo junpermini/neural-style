@@ -11,7 +11,7 @@ sudo -E apt-get update
  -E git clone https://github.com/torch/distro.git ~/torch --recursive
  ./torch; ./install.sh
  -E apt-get install libprotobuf-dev protobuf-compiler
-sudo -E luarocks install loadcaffe
+ -E luarocks install loadcaffe
 同步源码https://github.com/jcjohnson/neural-style.git
 cd neural-style
 sh models/download_models.sh
