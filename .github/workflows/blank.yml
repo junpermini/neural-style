@@ -13,7 +13,6 @@ sudo -E apt-get update
  -E apt-get install libprotobuf-dev protobuf-compiler
  -E luarocks install loadcaffe
  ./neural-style
-sudo -E sh models/download_models.sh
-th neural_style.lua -gpu -1 -print_iter 1
-th neural_style.lua -style_image the_scream.jpg -content_image in.jpg -gpu -1
-#命令解释：th neural_style.lua -style_image风格图片-content_image想处理的图片-gpu -1
+ -E sh models/download_models.sh
+ -E th neural_style.lua -gpu -1 -print_iter 1
+ -E th neural_style.lua -style_image the_scream.jpg -content_image in.jpg -gpu -1
