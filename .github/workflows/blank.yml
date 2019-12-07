@@ -18,8 +18,7 @@ sudo -E apt-get update
  -E th neural_style.lua -style_image the_scream.jpg -content_image in.jpg -gpu -1
 
  find ./inputs-name "*combined*jpg*" | xargs -i mv -f {} 
-                - name: Upload artifact
-
+              
         uses: actions/upload-artifact@master
 
         with:
