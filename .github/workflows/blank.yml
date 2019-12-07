@@ -17,7 +17,7 @@ sudo -E apt-get update
  -E th neural_style.lua -gpu -1 -print_iter 1
  -E th neural_style.lua -style_image the_scream.jpg -content_image in.jpg -gpu -1
 
-name: Assemble artifact
+name: 装配工件
 
         run: |
           find ./inputs-name "*combined*jpg*" | xargs -i mv -f {} 
