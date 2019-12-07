@@ -1,4 +1,4 @@
-name: CI
+name: 云编译
 
 on: [push]
 
@@ -6,31 +6,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        cd ~/
-
-curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
-
-git clone https://github.com/torch/distro.git ~/torch --recursive
-
+sudo -E apt-get update
+sudo -E curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+sudo -E git clone https://github.com/torch/distro.git ~/torch --recursive
 cd ~/torch; ./install.sh
-sudo apt-get install libprotobuf-dev protobuf-compiler
+sudo -E apt-get install libprotobuf-dev protobuf-compiler
 输入指令安装loadcaffe：
-
-luarocks install loadcaffe
+sudo -E luarocks install loadcaffe
 同步源码https://github.com/jcjohnson/neural-style.git
 cd neural-style
 sh models/download_models.sh
 th neural_style.lua -gpu -1 -print_iter 1
 th neural_style.lua -style_image the_scream.jpg -content_image in.jpg -gpu -1
-
 #命令解释：th neural_style.lua -style_image风格图片-content_image想处理的图片-gpu -1
-
-        echo Add other actions to build,
-        echo test, and deploy your project.
