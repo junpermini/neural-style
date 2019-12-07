@@ -12,7 +12,7 @@ sudo -E apt-get update
  ./torch; ./install.sh
  -E apt-get install libprotobuf-dev protobuf-compiler
  -E luarocks install loadcaffe
-同步源码https://github.com/jcjohnson/neural-style.git
+ # 同步源码https://github.com/jcjohnson/neural-style.git
 cd neural-style
 sh models/download_models.sh
 th neural_style.lua -gpu -1 -print_iter 1
