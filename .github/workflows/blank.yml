@@ -9,7 +9,7 @@ jobs:
 sudo -E apt-get update
  -E curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
  -E git clone https://github.com/torch/distro.git ~/torch --recursive
-cd ~/torch; ./install.sh
+ ./torch; ./install.sh
 sudo -E apt-get install libprotobuf-dev protobuf-compiler
 输入指令安装loadcaffe：
 sudo -E luarocks install loadcaffe
